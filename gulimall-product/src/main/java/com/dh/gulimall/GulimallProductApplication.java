@@ -1,4 +1,4 @@
-package com.dh.gulimall.product;
+package com.dh.gulimall;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

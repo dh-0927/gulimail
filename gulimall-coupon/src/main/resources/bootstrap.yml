@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: http://127.0.0.1
+        file-extension: yaml
+  application:
+    name: gulimall-coupon
