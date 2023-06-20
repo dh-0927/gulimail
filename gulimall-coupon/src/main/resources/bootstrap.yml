@@ -3,6 +3,9 @@ spring:
     nacos:
       config:
         server-addr: http://127.0.0.1
+        namespace: a306a64b-c198-4114-af6d-501a99cf78ec
+        group: prod
         file-extension: yaml
   application:
     name: gulimall-coupon
+

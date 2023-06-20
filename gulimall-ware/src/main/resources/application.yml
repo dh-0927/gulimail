@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 11000
 
 spring:
   datasource:
@@ -13,5 +13,8 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+logging:
+  level:
+    com.dh.gulimall: debug

@@ -1,4 +1,4 @@
-package com.dh.gulimall;
+package com.dh.gulimall.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,17 +1,32 @@
 server:
-  port: 8081
+  port: 10000
+  error:
+    include-message: on_param
+    include-binding-errors: always
 
 spring:
+  application:
+    name: gulimall-product
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.199.100:3306/gulimall_pms
     username: root
     password: 123456
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+logging:
+  level:
+    com.dh.gulimall: debug
+
+

@@ -4,6 +4,7 @@ import com.dh.common.utils.PageUtils;
 import com.dh.common.utils.R;
 import com.dh.gulimall.product.entity.AttrEntity;
 import com.dh.gulimall.product.service.AttrService;
+import com.dh.gulimall.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,15 @@ public class AttrController {
         return R.ok().put("page", page);
     }
 
+    @RequestMapping("/base/list/{catelogId}")
+    public R baseList(@RequestParam Map<String, Object> params,
+                      @PathVariable("catelogId") Long catelogId){
+        PageUtils page = attrService.queryPage(params, catelogId);
+
+        return R.ok().put("page", page);
+    }
+
+
 
     /**
      * 信息
@@ -50,9 +60,9 @@ public class AttrController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody AttrEntity attr){
-		attrService.save(attr);
+    public R save(@RequestBody AttrVo attrVo){
 
+		attrService.saveAttr(attrVo);
         return R.ok();
     }
 

@@ -7,9 +7,9 @@ import com.dh.gulimall.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.Map;
-
 
 
 /**
@@ -50,9 +50,9 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody BrandEntity brand){
-		brandService.save(brand);
+    public R save(@Valid @RequestBody BrandEntity brand){
 
+        brandService.save(brand);
         return R.ok();
     }
 
@@ -61,8 +61,7 @@ public class BrandController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody BrandEntity brand){
-		brandService.updateById(brand);
-
+        brandService.updateCascade(brand);
         return R.ok();
     }
 
